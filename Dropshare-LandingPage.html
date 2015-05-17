@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+        <meta property="og:site_name" content="dropshare-smithua">
+        <meta property="og:title" content="Image __SHAREDATE__ __FILENAME__">
+        <meta property="og:image" content="__PREVIEWURL__">
+        <meta property="og:url" content="__PATH__">
+        <meta property="og:description" content="smithua dropshare content sharing">
+        <meta name="twitter:card" content="photo">
+        <meta name="twitter:site" content="@smithua">
+        <meta name="twitter:creator" content="@smithua">
+        <meta name="twitter:image" content="__PREVIEWURL__">
+        <meta name="twitter:url" content="__PATH__">
+        <title>__SHAREDATE__ __FILENAME__ (__FILESIZE__)</title>
+        <link rel="stylesheet" href="https://dropshare-s3.s3-eu-central-1.amazonaws.com/style-fSYw/style.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <style>
+            .wrapper {
+              max-width: 700px;
+              margin: 30px auto 18px;
+              padding: 0 16px;
+            }
+
+            #markdown {
+              font: 15px "ff-tisa-web-pro", Georgia, serif;
+              line-height: 2;
+              padding-bottom: 20px;
+              color: #5D6164;
+            }
+            #markdown pre {
+                max-height: 74vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="js-get" data-role="__FILENAME__" style="display:none;">__FILETYPE__</div>
+
+        <div class="container">
+            <header class="header cf">
+                <h4 class="cf">
+                    <span class="fl_left item_name" id="productname">__SHAREDATE__ __FILENAME__</span>
+                    <div class="fl_right">
+                        <a href="__PATH__">Show original</a>&nbsp;&nbsp;<a href="__PREVIEWURL__" download>Download (__FILESIZE__)</a>
+                    </div>
+                </h4>
+            </header>
+
+            <section id="markdown" class="wrapper" style="display: none;">
+                <div class="highlight">
+                    <pre><code>
+                    </code></pre>
+                </div>
+            </section>
+
+            <div style="width: 550px; height: 600px; display: none;" class="asf"></div>
+
+            <div class="imagePreview" style="display: none;">
+                <img src="__PREVIEWURL__" alt="Image __SHAREDATE__ __FILENAME__" id="img-thumbnail" class="img-thumbnail">
+            </div>
+        </div>
+        <script>
+// webp
+// tif
+// bmp
+// jxr
+// psd
+// zip
+// tar
+// rar
+// gz
+// bz2
+// 7z
+
+// mp4
+// mkv
+// webm
+// mov
+// avi
+// wmv
+// mpg
+// mp3
+// m4a
+// ogg
+// flac
+// wav
+
+// pdf
+// epub
+// exe
+// swf
+// rtf
+// woff
+// woff2
+// eot
+// ttf
+// otf
+// flv
+// ps
+// xz
+            var aaaa = $( ".js-get" ).data( "role" );
+            var bbbb = aaaa.split(".").pop("").toLowerCase();
+
+            if (bbbb === "jpg" || bbbb === "png" || bbbb === "jpeg" || bbbb === "svg" || bbbb === "gif" || bbbb === "ico") {
+                $(".imagePreview").show();
+            } else if (bbbb === "html" || bbbb === "md" || bbbb === "txt") {
+                $( "#markdown" ).show();
+                // $( "#markdown > div > pre > code" ).load( "__PREVIEWURL__");
+                $.get( "__PREVIEWURL__", function( data ) {
+                    var html = data.replace(/^/gm, " ").split(" ");
+                    // html = data[0] + "<br>" + data.slice(1).join(" ");
+                    $( "#markdown > div > pre > code" ).html( html );
+                });
+            } else if (bbbb === "css") {
+                $( "#markdown" ).show();
+                $( "#markdown > div > pre > code" ).load("__PREVIEWURL__");
+            }
+            // $( ".asf" ).load( "__PREVIEWURL__");
+            // $.get( "__PREVIEWURL__", function(data) {
+            //   $(".asf").html(data);
+            //   // console.log(data);
+            // });
+        </script>
+
+        <script type="text/javascript" src="http://f.cl.ly/items/2F2c1D0F3q0r0b2K3007/modernizr.custom.32973.js"></script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-51551319-2', 'auto');
+          ga('require', 'linker');
+          ga('linker:autoLink', [] );
+          ga('send', 'pageview');
+        </script>
+    </body>
+</html>
