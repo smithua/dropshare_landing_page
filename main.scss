@@ -1,0 +1,165 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.62857143;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 300;
+  transition: .2s linear;
+  &:hover,
+  &:focus {
+    color: #666;
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: thin dotted;
+    outline: 5px auto #FFEB3B;
+    outline-offset: -2px;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+code,
+pre {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.imagePreview {
+  margin: 30px auto 18px;
+}
+
+.img-thumbnail {
+  max-width: 100%;
+  height: auto;
+  max-height: 80vh;
+  display: inline-block;
+  background-color: #fff;
+  transition: 0.6s ease-in;
+}
+
+.shared__link-name {
+  font-weight: 700;
+  color: #26A69A;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+
+.shared__link-other {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.download-link {
+  display: block;
+  background: #26A69A;
+  padding: 2px 10px;
+  border-radius: 6px;
+  color: #FFF;
+  margin-top: 10px;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+  &:hover {
+    background: #009688;
+  }
+  &:focus {
+    background: #00897B;
+  }
+}
+
+@media (max-width: 768px) {
+  .shared__link-other {
+    display:none;
+  }
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
