@@ -29,16 +29,16 @@ gulp.task('postcss', function () {
     ];
     return gulp.src('./css/*.css')
         .pipe(postcss(processors))
-        .pipe(gulp.dest('./prod/css/'))
+        .pipe(gulp.dest('./test/'))
         .pipe(browserSync.reload({
           stream: true
         }));
 });
 
+// INLINE CSS INTO HTML
 gulp.task('inline', function () {
     return gulp.src('./*.html')
       .pipe(inline({
-        // base: './',
         disabledTypes: ['svg', 'img', 'js']
       }))
       .pipe(gulp.dest('./'));
@@ -47,7 +47,7 @@ gulp.task('inline', function () {
 gulp.task('browserSync', function() {
   browserSync({
     server: {
-      baseDir: './',
+      baseDir: './test/',
       index: "Dropshare-LandingPage.html"
     },
   })
@@ -59,10 +59,12 @@ gulp.task('clean', function () {
 
 gulp.task('query', gulpSequence('sass', 'postcss', 'clean'));
 gulp.task('query2', gulpSequence('sass', 'postcss', 'inline', 'clean'));
+
 // watch task
 gulp.task('watch', ['browserSync'], function (){
     gulp.watch('*.scss', ['sass']);
     gulp.watch('./css/*.css', ['postcss']);
 })
+
 // DEFAULT task
 gulp.task('default', ['watch']);
